@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LostIntranslation</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='styles/css/bootstrap.css') }}>
+
+    <!-- jQuery library -->
+    <script type="application/javascript" src="../static/styles/js/bootstrap.js"></script>
+
+</head>
+
+<body bgcolor="#E4E4E4">
+<div class="row"
+     style="width: 100%; height: auto; padding: 20px; background-color: #232F34; margin-top: -10px; margin-left: -10px ">
+    <div class="col-sm-4">
+        <span style="color: #F9AA33; font-size: 20px"> Lost in Translation</span>
+    </div>
+</div>
+<div class="row" style="padding: 20px; margin: 10px">
+    <div class="col-sm-4" style="align-items: center">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+      <span class="btn btn-default btn-file">
+            Add File <input type="file" name="image" onchange="readURL(this);" oninput="readURL(this)">
+      </span>
+            <br>
+            <div id="image">
+                <img src="../static/images/default.png" id="file_upload"
+                     style="width: 100%; background-color: #FFF">
+            </div>
+            <br>
+            <center>
+                Convert Punjabi text into its <br>transliterated English</center>
+            <hr>
+            <input type="submit" value="Upload your image" class="btn" style="align-self: center; background-color: #232F34; color: #F9AA33">
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    function readURL(input) {
+        console.log("In the function");
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var source = e.target.result;
+                document.getElementById('file_upload').src = source;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+</body>
+</html>
