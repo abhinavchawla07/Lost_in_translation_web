@@ -4,6 +4,7 @@ public class translator {
 
     HashMap<String, String> map = new HashMap<>();
     HashSet<String> matra = new HashSet<>();
+    HashSet<String> consonant = new HashSet<>();
 
     public translator() {
         map.put("0A05", "a");
